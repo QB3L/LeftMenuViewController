@@ -14,19 +14,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    
     LeftViewController *leftView = [[LeftViewController alloc] initWithNibName:@"LeftViewController" bundle:nil];
     MainViewController *mainView = [[MainViewController alloc] initWithNibName:@"MainViewController" bundle:nil];
-    
     self.menuController = [[LeftMenuViewController alloc] init];
     [self.menuController setMenuController:leftView];
     [self.menuController setCenterController:mainView];
-    
-//    [_window addSubview:self.menuController.view];
-//    [_window bringSubviewToFront:self.menuController.view];
     self.window.rootViewController = self.menuController;
 	[_window makeKeyAndVisible];
-    
     return YES;
 }
 							
